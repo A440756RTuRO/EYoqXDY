@@ -60,7 +60,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build and Push Backend
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v6
       with:
         context: ./backend
         file: ./docker/Dockerfile.backend
@@ -68,7 +68,7 @@ jobs:
         tags: ghcr.io/${{ github.repository }}/backend:latest
         
     - name: Build and Push Frontend
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v6
       with:
         context: .
         file: ./docker/Dockerfile.frontend
